@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViajarMax - Busca Simplificada</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/simplified-search.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="/">
+                    <span class="viajar">Viajar</span><span class="max">Max</span>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">Voos</a></li>
+                    <li><a href="#">Hospedagem</a></li>
+                    <li><a href="#">Pacotes</a></li>
+                    <li><a href="#">Promoções</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="btn-theme-toggle">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <a href="#" class="btn-login">
+                    <i class="fas fa-user"></i>
+                    <span>Entrar</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Busca Simplificada de Voos</h1>
+            <p class="hero-subtitle">Encontre os melhores preços para sua próxima viagem</p>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="simplified-search">
+        <div class="container">
+            <div class="search-unified-card">
+                <div class="search-tabs">
+                    <button class="tab active" data-type="standard">
+                        <i class="fas fa-plane"></i>
+                        <span>Busca Padrão</span>
+                    </button>
+                    <button class="tab" data-type="natural">
+                        <i class="fas fa-microphone"></i>
+                        <span>Linguagem Natural</span>
+                    </button>
+                </div>
+                
+                <!-- Busca Padrão -->
+                <div class="search-form active" id="standard-search">
+                    <div class="trip-type">
+                        <label class="radio-option">
+                            <input type="radio" name="trip-type" value="one-way" checked>
+                            <span class="radio-label">Somente ida</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="trip-type" value="round-trip">
+                            <span class="radio-label">Ida e volta</span>
+                        </label>
+                    </div>
+                    
+                    <div class="search-inputs">
+                        <div class="form-group">
+                            <label for="origin-input">
+                                <i class="fas fa-plane-departure"></i>
+                                Origem
+                            </label>
+                            <input type="text" id="origin-input" placeholder="Aeroporto ou cidade de origem">
+                            <div class="airport-code" id="origin-code"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="destination-input">
+                                <i class="fas fa-plane-arrival"></i>
+                                Destino
+                            </label>
+                            <input type="text" id="destination-input" placeholder="Aeroporto ou cidade de destino">
+                            <div class="airport-code" id="destination-code"></div>
+                        </div>
+                        
+                        <div class="form-group dates">
+                            <div class="date-input">
+                                <label for="depart-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Data de ida
+                                </label>
+                                <input type="date" id="depart-date" min="">
+                            </div>
+                            
+                            <div class="date-input return-date">
+                                <label for="return-date">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Data de volta
+                                </label>
+                                <input type="date" id="return-date" min="" disabled>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cabin-class">
+                                <i class="fas fa-chair"></i>
+                                Classe
+                            </label>
+                            <select id="cabin-class">
+                                <option value="economy">Econômica</option>
+                                <option value="premium_economy">Econômica Premium</option>
+                                <option value="business">Executiva</option>
+                                <option value="first">Primeira Classe</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="passengers-section">
+                        <h4>Viajantes</h4>
+                        
+                        <div class="passenger-types">
+                            <div class="passenger-type">
+                                <span>Adultos</span>
+                                <div class="passenger-counter">
+                                    <button class="btn-decrease" data-type="adults">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <span class="count" id="adults-count">1</span>
+                                    <button class="btn-increase" data-type="adults">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="passenger-type">
+                                <span>Crianças (2-11)</span>
+                                <div class="passenger-counter">
+                                    <button class="btn-decrease" data-type="children">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <span class="count" id="children-count">0</span>
+                                    <button class="btn-increase" data-type="children">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="passenger-type">
+                                <span>Bebês (0-2)</span>
+                                <div class="passenger-counter">
+                                    <button class="btn-decrease" data-type="infants">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <span class="count" id="infants-count">0</span>
+                                    <button class="btn-increase" data-type="infants">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="calendar-preview">
+                        <h4>Preços para o mês</h4>
+                        <div class="calendar-container">
+                            <div class="month-navigation">
+                                <button class="btn-prev-month">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <h4 id="month-year-display">Abril de 2025</h4>
+                                <button class="btn-next-month">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="weekdays">
+                                <span>dom</span>
+                                <span>seg</span>
+                                <span>ter</span>
+                                <span>qua</span>
+                                <span>qui</span>
+                                <span>sex</span>
+                                <span>sáb</span>
+                            </div>
+                            
+                            <div class="days" id="calendar-days">
+                                <!-- Dias gerados dinamicamente pelo JavaScript -->
+                                <div class="calendar-info">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Selecione origem e destino para ver preços</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button id="search-flights-btn" class="search-button">
+                        <i class="fas fa-search"></i>
+                        Buscar Voos
+                    </button>
+                </div>
+                
+                <!-- Busca por Linguagem Natural -->
+                <div class="search-form" id="natural-search">
+                    <div class="natural-language-input">
+                        <textarea id="nl-query" placeholder="Descreva sua viagem aqui... (ex: 'Quero viajar de São Paulo para o Rio de Janeiro no dia 25 de maio')"></textarea>
+                        
+                        <div class="nl-actions">
+                            <button id="nl-voice-btn" class="nl-action-btn" title="Buscar por voz">
+                                <i class="fas fa-microphone"></i>
+                            </button>
+                            <button id="nl-search-btn" class="nl-action-btn primary" title="Buscar">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="nl-feedback" id="nl-feedback" style="display: none;">
+                        <div class="nl-feedback-content">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <span id="nl-feedback-text">Processando sua solicitação...</span>
+                        </div>
+                        <div class="nl-extracted-data" id="nl-extracted-data"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <span class="viajar">Viajar</span><span class="max">Max</span>
+                    </div>
+                    <p class="footer-about">Somos uma agência de viagens online comprometida em oferecer as melhores experiências pelos melhores preços.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Links Úteis</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Como Funciona</a></li>
+                        <li><a href="#">Termos e Condições</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contato</h4>
+                    <p>contato@viajarmax.com.br</p>
+                    <p>0800 123 4567</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 ViajarMax. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/simplified-search.js"></script>
+</body>
+</html>

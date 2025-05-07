@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViajarMax - Sua melhor opção em viagens</title>
+    <meta name="description" content="Encontre as melhores ofertas em passagens aéreas, hotéis e pacotes de viagem na ViajarMax.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Search Flow JS -->
+    <script src="js/search-flow.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>
+                        <a href="#/home/">
+                            <span class="viajar">Viajar</span><span class="max">Max</span>
+                        </a>
+                    </h1>
+                </div>
+                
+                <nav class="main-nav">
+                    <button class="menu-toggle" aria-label="Toggle Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-menu">
+                        <li><a href="#/home/" class="active">Home</a></li>
+                        <li><a href="#/promocoes/">Promoções</a></li>
+                        <li><a href="#/destinos/">Destinos</a></li>
+                        <li><a href="#/sobre/">Sobre Nós</a></li>
+                        <li><a href="#/contato/">Contato</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="user-actions">
+                    <a href="#/login/" class="btn-login">
+                        <i class="fas fa-user"></i>
+                        <span>Entrar</span>
+                    </a>
+                    <div class="theme-toggle-wrapper">
+                        <label class="theme-toggle">
+                            <input type="checkbox" id="theme-toggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="wave"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h2>Explore o mundo com os melhores preços</h2>
+                <p class="hero-subtitle">Encontre passagens, hotéis e pacotes incríveis para sua próxima aventura</p>
+                
+                <div class="search-flow" id="search-step-1">
+                    <div class="search-inputs">
+                        <div class="airport-input">
+                            <input type="text" id="origin-input" placeholder="Pesquisar Aeroportos...">
+                            <div class="airport-code">
+                                <span id="origin-code">CGH</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flight-direction">
+                            <span>para</span>
+                        </div>
+                        
+                        <div class="airport-input">
+                            <input type="text" id="destination-input" placeholder="Pesquisar Aeroportos...">
+                            <div class="airport-code">
+                                <span id="destination-code">GIG</span>
+                            </div>
+                        </div>
+                        
+                        <button id="continue-search" class="btn-continue">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="search-flow hidden" id="search-step-2">
+                    <div class="step-header">
+                        <button class="btn-back">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <h3>Quando você deseja viajar de <span id="origin-display">CGH</span> para <span id="destination-display">GIG</span>?</h3>
+                    </div>
+                    
+                    <div class="date-selector">
+                        <div class="calendar">
+                            <div class="month-navigation">
+                                <button class="btn-prev-month">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <h4>Abril de 2025</h4>
+                                <button class="btn-next-month">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="weekdays">
+                                <span>dom</span>
+                                <span>seg</span>
+                                <span>ter</span>
+                                <span>qua</span>
+                                <span>qui</span>
+                                <span>sex</span>
+                                <span>sáb</span>
+                            </div>
+                            
+                            <div class="days">
+                                <div class="day empty"></div>
+                                <div class="day empty"></div>
+                                <div class="day">1</div>
+                                <div class="day">2</div>
+                                <div class="day">3</div>
+                                <div class="day">4</div>
+                                <div class="day">5</div>
+                                <div class="day">6</div>
+                                <div class="day">7</div>
+                                <div class="day">8</div>
+                                <div class="day">9</div>
+                                <div class="day">10</div>
+                                <div class="day">11</div>
+                                <div class="day">12</div>
+                                <div class="day">13</div>
+                                <div class="day">14</div>
+                                <div class="day selected">15</div>
+                                <div class="day">16</div>
+                                <div class="day">17</div>
+                                <div class="day">18</div>
+                                <div class="day">19</div>
+                                <div class="day">20</div>
+                                <div class="day">21</div>
+                                <div class="day">22</div>
+                                <div class="day">23</div>
+                                <div class="day">24</div>
+                                <div class="day">25</div>
+                                <div class="day">26</div>
+                                <div class="day">27</div>
+                                <div class="day">28</div>
+                                <div class="day">29</div>
+                                <div class="day">30</div>
+                            </div>
+                        </div>
+                        
+                        <div class="travel-options">
+                            <h4>Econômica</h4>
+                            
+                            <div class="class-options">
+                                <label class="radio-option">
+                                    <input type="radio" name="travel-class" checked>
+                                    <span class="radio-label">Econômica</span>
+                                </label>
+                                
+                                <label class="radio-option">
+                                    <input type="radio" name="travel-class">
+                                    <span class="radio-label">Executiva</span>
+                                </label>
+                                
+                                <label class="radio-option">
+                                    <input type="radio" name="travel-class">
+                                    <span class="radio-label">Primeira Classe</span>
+                                </label>
+                                
+                                <label class="radio-option">
+                                    <input type="radio" name="travel-class">
+                                    <span class="radio-label">Econômica Premium</span>
+                                </label>
+                            </div>
+                            
+                            <div class="passengers-section">
+                                <h4>Viajantes</h4>
+                                
+                                <div class="passenger-type">
+                                    <span>Adultos</span>
+                                    <div class="passenger-counter">
+                                        <button class="btn-decrease">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <span class="count">1</span>
+                                        <button class="btn-increase">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="passenger-type">
+                                    <span>Crianças</span>
+                                    <div class="passenger-counter">
+                                        <button class="btn-decrease">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <span class="count">0</span>
+                                        <button class="btn-increase">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="passenger-type">
+                                    <span>Bebês</span>
+                                    <div class="passenger-counter">
+                                        <button class="btn-decrease">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <span class="count">0</span>
+                                        <button class="btn-increase">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <a href="flight-results.html" class="search-button">
+                                <i class="fas fa-search"></i>
+                                Buscar Voos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotions Section -->
+    <section class="promotions">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ofertas imperdíveis</h2>
+                <p>Confira nossas melhores promoções para sua próxima viagem</p>
+            </div>
+            
+            <div class="promotions-grid">
+                <div class="promo-card">
+                    <div class="promo-image">
+                        <span class="discount-badge">-30%</span>
+                    </div>
+                    <div class="promo-content">
+                        <h3>Rio de Janeiro</h3>
+                        <div class="promo-details">
+                            <p><i class="fas fa-calendar-alt"></i> 3 dias e 2 noites</p>
+                            <p><i class="fas fa-bed"></i> Hotel 4 estrelas</p>
+                            <p><i class="fas fa-plane"></i> Passagem aérea inclusa</p>
+                        </div>
+                        <div class="promo-price">
+                            <span class="old-price">R$ 1.800</span>
+                            <span class="current-price">R$ 1.260</span>
+                            <span class="installments">em até 10x de R$ 126</span>
+                        </div>
+                        <a href="#" class="btn-view-deal">Ver oferta</a>
+                    </div>
+                </div>
+                
+                <div class="promo-card">
+                    <div class="promo-image promo-gramado">
+                        <span class="discount-badge">-25%</span>
+                    </div>
+                    <div class="promo-content">
+                        <h3>Gramado</h3>
+                        <div class="promo-details">
+                            <p><i class="fas fa-calendar-alt"></i> 4 dias e 3 noites</p>
+                            <p><i class="fas fa-bed"></i> Pousada Premium</p>
+                            <p><i class="fas fa-car"></i> Traslado incluso</p>
+                        </div>
+                        <div class="promo-price">
+                            <span class="old-price">R$ 2.400</span>
+                            <span class="current-price">R$ 1.800</span>
+                            <span class="installments">em até 10x de R$ 180</span>
+                        </div>
+                        <a href="#" class="btn-view-deal">Ver oferta</a>
+                    </div>
+                </div>
+                
+                <div class="promo-card">
+                    <div class="promo-image promo-salvador">
+                        <span class="discount-badge">-40%</span>
+                    </div>
+                    <div class="promo-content">
+                        <h3>Salvador</h3>
+                        <div class="promo-details">
+                            <p><i class="fas fa-calendar-alt"></i> 5 dias e 4 noites</p>
+                            <p><i class="fas fa-bed"></i> Resort All Inclusive</p>
+                            <p><i class="fas fa-plane"></i> Passagem aérea inclusa</p>
+                        </div>
+                        <div class="promo-price">
+                            <span class="old-price">R$ 3.500</span>
+                            <span class="current-price">R$ 2.100</span>
+                            <span class="installments">em até 10x de R$ 210</span>
+                        </div>
+                        <a href="#" class="btn-view-deal">Ver oferta</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-all-promos">
+                <a href="#/promocoes/" class="btn-view-all">
+                    Ver todas as promoções
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section class="destinations">
+        <div class="container">
+            <div class="section-header">
+                <h2>Destinos populares</h2>
+                <p>Descubra os lugares mais procurados pelos nossos clientes</p>
+            </div>
+            
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <div class="destination-image dest-rio"></div>
+                    <div class="destination-content">
+                        <h3>Rio de Janeiro</h3>
+                        <p>A cidade maravilhosa te espera com suas praias, montanhas e cultura vibrante.</p>
+                        <a href="#" class="btn-explore">Explorar destino</a>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-image dest-sp"></div>
+                    <div class="destination-content">
+                        <h3>São Paulo</h3>
+                        <p>A metrópole brasileira com os melhores restaurantes, museus e vida noturna.</p>
+                        <a href="#" class="btn-explore">Explorar destino</a>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-image dest-fortaleza"></div>
+                    <div class="destination-content">
+                        <h3>Fortaleza</h3>
+                        <p>Praias paradisíacas, gastronomia deliciosa e um povo hospitaleiro.</p>
+                        <a href="#" class="btn-explore">Explorar destino</a>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-image dest-recife"></div>
+                    <div class="destination-content">
+                        <h3>Recife</h3>
+                        <p>Conhecida como a Veneza Brasileira, com suas pontes, rios e cultura rica.</p>
+                        <a href="#" class="btn-explore">Explorar destino</a>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-image dest-floripa"></div>
+                    <div class="destination-content">
+                        <h3>Florianópolis</h3>
+                        <p>Ilha da Magia com mais de 40 praias, natureza exuberante e qualidade de vida.</p>
+                        <a href="#" class="btn-explore">Explorar destino</a>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-image dest-manaus"></div>
+                    <div class="destination-content">
+                        <h3>Manaus</h3>
+                        <p>Portal da Amazônia, com sua flora e fauna únicas no mundo.</p>
+                        <a href="#" class="btn-explore">Explorar destino</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2>Por que escolher a ViajarMax?</h2>
+                <p>Descubra as vantagens de viajar com a gente</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3>Melhores preços</h3>
+                    <p>Garantimos os preços mais competitivos do mercado para sua viagem dos sonhos.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Pagamento flexível</h3>
+                    <p>Parcelamento em até 12x sem juros e diversas formas de pagamento disponíveis.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Atendimento 24h</h3>
+                    <p>Suporte completo antes, durante e depois da sua viagem, a qualquer hora.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Segurança garantida</h3>
+                    <p>Viaje tranquilo com seguros de viagem e garantia de reembolso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que dizem nossos clientes</h2>
+                <p>Experiências reais de quem viajou com a ViajarMax</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Excelente experiência! Consegui preços imbatíveis para nossa viagem em família a Fernando de Noronha. O atendimento foi impecável do início ao fim."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Marcela Santos</h4>
+                            <p>São Paulo, SP</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Já viajei diversas vezes utilizando a ViajarMax e nunca tive problemas. O site é intuitivo, os preços são excelentes e o suporte é de primeira qualidade."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Ricardo Oliveira</h4>
+                            <p>Belo Horizonte, MG</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Consegui encontrar um pacote para Maceió com um desconto incrível! O hotel era exatamente como nas fotos e todo o processo foi simples e transparente."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Juliana Mendes</h4>
+                            <p>Porto Alegre, RS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-controls">
+                <button class="prev-testimonial" aria-label="Depoimento anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="testimonial-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="next-testimonial" aria-label="Próximo depoimento">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>Receba nossas ofertas exclusivas</h2>
+                    <p>Cadastre-se para receber promoções especiais e dicas de viagem diretamente no seu email</p>
+                </div>
+                
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Seu melhor email" required>
+                    <button type="submit">Inscrever-se</button>
+                </form>
+                
+                <p class="newsletter-privacy">Respeitamos sua privacidade e não compartilhamos seus dados. Você pode cancelar a inscrição a qualquer momento.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <span class="viajar">Viajar</span><span class="max">Max</span>
+                    </div>
+                    <p class="footer-about">Somos uma agência de viagens online comprometida em oferecer as melhores experiências pelos melhores preços.</p>
+                    <div class="social-media">
+                        <a href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Navegação</h3>
+                    <ul class="footer-links">
+                        <li><a href="#/home/">Home</a></li>
+                        <li><a href="#/promocoes/">Promoções</a></li>
+                        <li><a href="#/destinos/">Destinos</a></li>
+                        <li><a href="#/sobre/">Sobre Nós</a></li>
+                        <li><a href="#/contato/">Contato</a></li>
+                        <li><a href="#/blog/">Blog de Viagens</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Produtos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#/passagens-aereas/">Passagens Aéreas</a></li>
+                        <li><a href="#/hoteis/">Hotéis</a></li>
+                        <li><a href="#/pacotes/">Pacotes</a></li>
+                        <li><a href="#/cruzeiros/">Cruzeiros</a></li>
+                        <li><a href="#/aluguel-de-carros/">Aluguel de Carros</a></li>
+                        <li><a href="#/seguro-viagem/">Seguro Viagem</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Ajuda & Suporte</h3>
+                    <ul class="footer-links">
+                        <li><a href="#/central-de-ajuda/">Central de Ajuda</a></li>
+                        <li><a href="#/cancelamentos/">Cancelamentos</a></li>
+                        <li><a href="#/reembolsos/">Reembolsos</a></li>
+                        <li><a href="#/faq/">Perguntas Frequentes</a></li>
+                        <li><a href="#/politica-de-privacidade/">Política de Privacidade</a></li>
+                        <li><a href="#/termos-de-uso/">Termos de Uso</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>0800 123 4567</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>contato@viajarmax.com.br</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. Paulista, 1000 - São Paulo, SP</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Seg-Sex: 8h às 20h | Sáb: 9h às 15h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2023 ViajarMax. Todos os direitos reservados.</p>
+                </div>
+                
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-pix"></i>
+                    <i class="fas fa-money-bill-wave"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

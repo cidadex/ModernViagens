@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViajarMax - Resultados de Voo</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/flight-results.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main JS -->
+    <script src="js/main.js" defer></script>
+    
+    <!-- Flight Results JS -->
+    <script src="js/flight-results.js" type="module" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>
+                        <a href="index.html">
+                            <span class="viajar">Viajar</span><span class="max">Max</span>
+                        </a>
+                    </h1>
+                </div>
+                
+                <nav class="main-nav">
+                    <button class="menu-toggle" aria-label="Toggle Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#/promocoes/">Promoções</a></li>
+                        <li><a href="#/destinos/">Destinos</a></li>
+                        <li><a href="#/sobre/">Sobre Nós</a></li>
+                        <li><a href="#/contato/">Contato</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="user-actions">
+                    <a href="#/login/" class="btn-login">
+                        <i class="fas fa-user"></i>
+                        <span>Entrar</span>
+                    </a>
+                    <div class="theme-toggle-wrapper">
+                        <label class="theme-toggle">
+                            <input type="checkbox" id="theme-toggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Flight Results Section -->
+    <section class="flight-results">
+        <div class="container">
+            <div class="results-header">
+                <div class="route-info">
+                    <h1>Voos de <span class="highlight">CGH</span> para <span class="highlight">GIG</span></h1>
+                    <p>15 de Abril, 2025 • 1 Passageiro • Econômica</p>
+                </div>
+                <div class="modify-search">
+                    <button class="btn-modify">
+                        <i class="fas fa-edit"></i>
+                        Modificar Busca
+                    </button>
+                </div>
+            </div>
+
+            <div class="results-content">
+                <div class="filters-panel">
+                    <div class="filter-section">
+                        <h3>Filtros</h3>
+                        <div class="filter-group">
+                            <h4>Preço</h4>
+                            <div class="price-slider">
+                                <input type="range" min="0" max="2000" value="1500" class="slider" id="price-range">
+                                <div class="price-range-labels">
+                                    <span>R$ 0</span>
+                                    <span>R$ 2.000</span>
+                                </div>
+                                <div class="selected-price">Até R$ 1.500</div>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4>Horário de Saída</h4>
+                            <div class="time-filter">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span class="checkbox-custom"></span>
+                                    Manhã (06:00 - 12:00)
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span class="checkbox-custom"></span>
+                                    Tarde (12:00 - 18:00)
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                    <span class="checkbox-custom"></span>
+                                    Noite (18:00 - 00:00)
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                    <span class="checkbox-custom"></span>
+                                    Madrugada (00:00 - 06:00)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4>Companhias Aéreas</h4>
+                            <div class="airline-filter">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span class="checkbox-custom"></span>
+                                    LATAM
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span class="checkbox-custom"></span>
+                                    GOL
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span class="checkbox-custom"></span>
+                                    Azul
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                    <span class="checkbox-custom"></span>
+                                    Outras
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4>Duração</h4>
+                            <div class="duration-filter">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span class="checkbox-custom"></span>
+                                    Até 1h
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked>
+                                    <span class="checkbox-custom"></span>
+                                    1h - 2h
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox">
+                                    <span class="checkbox-custom"></span>
+                                    Mais de 2h
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flights-list">
+                    <div class="sort-options">
+                        <span>Ordenar por:</span>
+                        <button class="sort-btn active">Preço</button>
+                        <button class="sort-btn">Duração</button>
+                        <button class="sort-btn">Horário</button>
+                    </div>
+
+                    <!-- Flight Cards -->
+                    <div class="flight-card">
+                        <div class="airline-info">
+                            <img src="images/latam-logo-new.jpg" alt="LATAM Airlines" class="airline-logo">
+                            <span class="airline-name">LATAM Airlines</span>
+                        </div>
+                        
+                        <div class="flight-details">
+                            <div class="flight-time">
+                                <div class="departure">
+                                    <span class="time">08:15</span>
+                                    <span class="airport">CGH</span>
+                                </div>
+                                <div class="flight-duration">
+                                    <span class="duration">1h 05m</span>
+                                    <div class="flight-line">
+                                        <div class="dot"></div>
+                                        <div class="line"></div>
+                                        <div class="dot"></div>
+                                    </div>
+                                    <span class="direct">Direto</span>
+                                </div>
+                                <div class="arrival">
+                                    <span class="time">09:20</span>
+                                    <span class="airport">GIG</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flight-info">
+                                <span class="flight-number">LA 3242</span>
+                                <span class="aircraft">Airbus A320</span>
+                            </div>
+                        </div>
+                        
+                        <div class="price-actions">
+                            <div class="price-info">
+                                <span class="price">R$ 398</span>
+                                <span class="traveler-info">Preço por adulto</span>
+                                <span class="installments">em até 10x sem juros</span>
+                            </div>
+                            <button class="btn-select">Selecionar</button>
+                        </div>
+                    </div>
+
+                    <div class="flight-card">
+                        <div class="airline-info">
+                            <img src="images/gol-logo.png" alt="GOL Linhas Aéreas" class="airline-logo">
+                            <span class="airline-name">GOL Linhas Aéreas</span>
+                        </div>
+                        
+                        <div class="flight-details">
+                            <div class="flight-time">
+                                <div class="departure">
+                                    <span class="time">10:30</span>
+                                    <span class="airport">CGH</span>
+                                </div>
+                                <div class="flight-duration">
+                                    <span class="duration">1h 10m</span>
+                                    <div class="flight-line">
+                                        <div class="dot"></div>
+                                        <div class="line"></div>
+                                        <div class="dot"></div>
+                                    </div>
+                                    <span class="direct">Direto</span>
+                                </div>
+                                <div class="arrival">
+                                    <span class="time">11:40</span>
+                                    <span class="airport">GIG</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flight-info">
+                                <span class="flight-number">G3 1253</span>
+                                <span class="aircraft">Boeing 737-800</span>
+                            </div>
+                        </div>
+                        
+                        <div class="price-actions">
+                            <div class="price-info">
+                                <span class="price">R$ 425</span>
+                                <span class="traveler-info">Preço por adulto</span>
+                                <span class="installments">em até 10x sem juros</span>
+                            </div>
+                            <button class="btn-select">Selecionar</button>
+                        </div>
+                    </div>
+
+                    <div class="flight-card">
+                        <div class="tag-promo">Melhor preço</div>
+                        <div class="airline-info">
+                            <img src="images/azul-logo-new.png" alt="Azul Linhas Aéreas" class="airline-logo">
+                            <span class="airline-name">Azul Linhas Aéreas</span>
+                        </div>
+                        
+                        <div class="flight-details">
+                            <div class="flight-time">
+                                <div class="departure">
+                                    <span class="time">13:45</span>
+                                    <span class="airport">CGH</span>
+                                </div>
+                                <div class="flight-duration">
+                                    <span class="duration">1h 15m</span>
+                                    <div class="flight-line">
+                                        <div class="dot"></div>
+                                        <div class="line"></div>
+                                        <div class="dot"></div>
+                                    </div>
+                                    <span class="direct">Direto</span>
+                                </div>
+                                <div class="arrival">
+                                    <span class="time">15:00</span>
+                                    <span class="airport">GIG</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flight-info">
+                                <span class="flight-number">AD 5602</span>
+                                <span class="aircraft">Embraer E195-E2</span>
+                            </div>
+                        </div>
+                        
+                        <div class="price-actions">
+                            <div class="price-info">
+                                <span class="price">R$ 379</span>
+                                <span class="traveler-info">Preço por adulto</span>
+                                <span class="installments">em até 10x sem juros</span>
+                            </div>
+                            <button class="btn-select">Selecionar</button>
+                        </div>
+                    </div>
+
+                    <div class="flight-card">
+                        <div class="airline-info">
+                            <img src="images/gol-logo.png" alt="GOL Linhas Aéreas" class="airline-logo">
+                            <span class="airline-name">GOL Linhas Aéreas</span>
+                        </div>
+                        
+                        <div class="flight-details">
+                            <div class="flight-time">
+                                <div class="departure">
+                                    <span class="time">16:20</span>
+                                    <span class="airport">CGH</span>
+                                </div>
+                                <div class="flight-duration">
+                                    <span class="duration">1h 10m</span>
+                                    <div class="flight-line">
+                                        <div class="dot"></div>
+                                        <div class="line"></div>
+                                        <div class="dot"></div>
+                                    </div>
+                                    <span class="direct">Direto</span>
+                                </div>
+                                <div class="arrival">
+                                    <span class="time">17:30</span>
+                                    <span class="airport">GIG</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flight-info">
+                                <span class="flight-number">G3 1257</span>
+                                <span class="aircraft">Boeing 737-800</span>
+                            </div>
+                        </div>
+                        
+                        <div class="price-actions">
+                            <div class="price-info">
+                                <span class="price">R$ 453</span>
+                                <span class="traveler-info">Preço por adulto</span>
+                                <span class="installments">em até 10x sem juros</span>
+                            </div>
+                            <button class="btn-select">Selecionar</button>
+                        </div>
+                    </div>
+
+                    <div class="flight-card">
+                        <div class="airline-info">
+                            <img src="images/latam-logo-new.jpg" alt="LATAM Airlines" class="airline-logo">
+                            <span class="airline-name">LATAM Airlines</span>
+                        </div>
+                        
+                        <div class="flight-details">
+                            <div class="flight-time">
+                                <div class="departure">
+                                    <span class="time">19:40</span>
+                                    <span class="airport">CGH</span>
+                                </div>
+                                <div class="flight-duration">
+                                    <span class="duration">1h 05m</span>
+                                    <div class="flight-line">
+                                        <div class="dot"></div>
+                                        <div class="line"></div>
+                                        <div class="dot"></div>
+                                    </div>
+                                    <span class="direct">Direto</span>
+                                </div>
+                                <div class="arrival">
+                                    <span class="time">20:45</span>
+                                    <span class="airport">GIG</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flight-info">
+                                <span class="flight-number">LA 3247</span>
+                                <span class="aircraft">Airbus A319</span>
+                            </div>
+                        </div>
+                        
+                        <div class="price-actions">
+                            <div class="price-info">
+                                <span class="price">R$ 412</span>
+                                <span class="traveler-info">Preço por adulto</span>
+                                <span class="installments">em até 10x sem juros</span>
+                            </div>
+                            <button class="btn-select">Selecionar</button>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="page-btn" aria-label="Página anterior">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <button class="page-btn">4</button>
+                        <button class="page-btn" aria-label="Próxima página">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <span class="viajar">Viajar</span><span class="max">Max</span>
+                    </div>
+                    <p class="footer-about">Somos uma agência de viagens online comprometida em oferecer as melhores experiências pelos melhores preços.</p>
+                    <div class="social-media">
+                        <a href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Navegação</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#/promocoes/">Promoções</a></li>
+                        <li><a href="#/destinos/">Destinos</a></li>
+                        <li><a href="#/sobre/">Sobre Nós</a></li>
+                        <li><a href="#/contato/">Contato</a></li>
+                        <li><a href="#/blog/">Blog de Viagens</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Produtos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#/passagens-aereas/">Passagens Aéreas</a></li>
+                        <li><a href="#/hoteis/">Hotéis</a></li>
+                        <li><a href="#/pacotes/">Pacotes</a></li>
+                        <li><a href="#/seguro-viagem/">Seguro Viagem</a></li>
+                        <li><a href="#/aluguel-carros/">Aluguel de Carros</a></li>
+                        <li><a href="#/cruzeiros/">Cruzeiros</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone"></i> 0800 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> contato@viajarmax.com.br</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000, São Paulo - SP</li>
+                    </ul>
+                    
+                    <div class="payment-methods">
+                        <h4>Formas de Pagamento</h4>
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-amex"></i>
+                            <i class="fab fa-pix"></i>
+                            <i class="fas fa-barcode"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 ViajarMax - Todos os direitos reservados.</p>
+                <ul class="legal-links">
+                    <li><a href="#/termos-de-uso/">Termos de Uso</a></li>
+                    <li><a href="#/politica-de-privacidade/">Política de Privacidade</a></li>
+                    <li><a href="#/cookies/">Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/unified-results.js"></script>
+</body>
+</html>

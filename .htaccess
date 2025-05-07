@@ -1,0 +1,3 @@
+# Redirecionar requisições /api para o servidor API
+RewriteEngine On
+RewriteRule ^api/(.*) http://localhost:8081/api/$1 [P,L]
